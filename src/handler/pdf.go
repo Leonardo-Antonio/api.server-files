@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/Leonardo-Antonio/api.server-files/src/helper"
@@ -16,6 +17,7 @@ func (i *Pdf) Upload(c *fiber.Ctx) error {
 		return c.Status(http.StatusBadRequest).JSON(response.Err(err.Error(), nil))
 	}
 
+	log.Println(fileHeader.Header.Get("Content-Type"))
 	if fileHeader.Header.Get("Content-Type") != "application/pdf" {
 		return c.Status(http.StatusBadRequest).JSON(response.Err("el formato ingresado no es correcto", nil))
 	}

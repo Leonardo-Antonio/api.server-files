@@ -8,6 +8,7 @@ import (
 )
 
 func main() {
+	app.CreateDirStaticIsNotExist()
 	if err := godotenv.Load(); err != nil {
 		log.Fatalln(err)
 	}
