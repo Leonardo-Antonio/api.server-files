@@ -26,4 +26,6 @@
 .env
 
 # Static
+./static
 .static
+/static

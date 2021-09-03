@@ -2,6 +2,7 @@ package app
 
 import (
 	"log"
+	"os"
 
 	"github.com/Leonardo-Antonio/api.server-files/src/router"
 	"github.com/gofiber/fiber/v2"
@@ -28,7 +29,7 @@ func (a *app) Routers() {
 }
 
 func (a *app) Listening() {
-	if err := a.app.Listen(":8080"); err != nil {
+	if err := a.app.Listen(":" + os.Getenv("PORT")); err != nil {
 		log.Fatalln(err)
 	}
 }
