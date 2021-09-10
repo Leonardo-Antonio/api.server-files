@@ -8,14 +8,25 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
+	"github.com/joho/godotenv"
 )
 
 type app struct {
-	app *fiber.App
+	app   *fiber.App
+	state string
 }
 
-func New() *app {
-	return &app{fiber.New()}
+func New(state string) *app {
+	return &app{fiber.New(), state}
+}
+
+func (a *app) Config() {
+	CreateDirStaticIsNotExist()
+	if a.state == DEV {
+		if err := godotenv.Load(); err != nil {
+			log.Fatalln(err)
+		}
+	}
 }
 
 func (a *app) Middlewares() {
