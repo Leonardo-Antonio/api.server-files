@@ -7,6 +7,7 @@
 ```.env
 KEY=<apiKey>
 HOSTNAME=<host> #you can only see the files from that ip address
+PORT=<port>
 ```
 
 - EndPoint
