@@ -1,15 +1,15 @@
 package helper
 
 import (
+	"fmt"
 	"io/ioutil"
 	"mime/multipart"
 	"os"
-	"strings"
 
 	gonanoid "github.com/matoous/go-nanoid/v2"
 )
 
-func SaveFile(fileHeader *multipart.FileHeader, path string) (string, error) {
+func SaveFile(fileHeader *multipart.FileHeader, path, typeFile string) (string, error) {
 	file, err := fileHeader.Open()
 	if err != nil {
 		return "", err
@@ -21,15 +21,13 @@ func SaveFile(fileHeader *multipart.FileHeader, path string) (string, error) {
 		return "", err
 	}
 
-	id, err := gonanoid.New()
+	id, err := gonanoid.New(8)
 	if err != nil {
 		return "", err
 	}
 
-	fileName := id + "__" + strings.Join(strings.Split(fileHeader.Filename, " "), "-")
-
 	err = ioutil.WriteFile(
-		path+fileName,
+		path+fmt.Sprintf("%s.%s", id, typeFile),
 		fileBytes,
 		os.ModePerm,
 	)
@@ -37,5 +35,5 @@ func SaveFile(fileHeader *multipart.FileHeader, path string) (string, error) {
 		return "", err
 	}
 
-	return fileName, nil
+	return fmt.Sprintf("%s.%s", id, typeFile), nil
 }

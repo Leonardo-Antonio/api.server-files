@@ -20,7 +20,7 @@ func (i *Image) Upload(c *fiber.Ctx) error {
 		return c.Status(http.StatusBadRequest).JSON(response.Err("el formato de la imagen debe ser image/png", nil))
 	}
 
-	fileName, err := helper.SaveFile(fileHeader, "static/images/")
+	fileName, err := helper.SaveFile(fileHeader, "static/images/", "png")
 	if err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(response.Err(err.Error(), nil))
 	}

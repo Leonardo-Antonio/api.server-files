@@ -22,7 +22,7 @@ func (i *Pdf) Upload(c *fiber.Ctx) error {
 		return c.Status(http.StatusBadRequest).JSON(response.Err("el formato ingresado no es correcto", nil))
 	}
 
-	fileName, err := helper.SaveFile(fileHeader, "static/pdfs/")
+	fileName, err := helper.SaveFile(fileHeader, "static/pdfs/", "pdf")
 	if err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(response.Err(err.Error(), nil))
 	}
