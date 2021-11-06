@@ -6,9 +6,9 @@ RUN mkdir api.server-files
 
 WORKDIR /src/api.server-files
 
-ENV KEY=<KEY>
-ENV HOSTNAME=<ip>
-ENV PORT=<port>
+ENV KEY=${KEY}
+ENV HOSTNAME=${HOSTNAME}
+ENV PORT=${PORT}
 
 COPY . .
 

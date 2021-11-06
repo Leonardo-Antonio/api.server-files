@@ -18,8 +18,6 @@
 /vendor/
 /Godeps/
 
-# Env
-.env
 
 # Static
 ./static
