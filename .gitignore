@@ -21,7 +21,3 @@
 # Env
 .env
 
-# Static
-./static
-.static
-/static
