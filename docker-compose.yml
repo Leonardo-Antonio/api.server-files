@@ -11,6 +11,7 @@ services:
     ports:
       - 8001:8001
     volumes:
-      - ~/Documentos/Projects/api.server-files/static/images:/src/api.server-files/static/images
-      - ~/Documentos/Projects/api.server-files/static/pdfs:/src/api.server-files/static/pdfs
+      - ~/api.server-files/static/images:/src/api.server-files/static/images
+      - ~/api.server-files/static/pdfs:/src/api.server-files/static/pdfs
+
     
