@@ -1,8 +1,8 @@
 echo "#####################Acualizando repositorios#####################"
 sudo apt update -y
 
-echo "#####################Instalación de curl y git#####################"
-sudo apt install curl git -y
+echo "#####################Instalación de curl#####################"
+sudo apt install curl -y
 
 echo "#####################Paquetes de requisitos previos#####################"
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
