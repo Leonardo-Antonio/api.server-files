@@ -19,11 +19,6 @@
 /Godeps/
 
 
-# Static
-./static
-.static
-/static
-
 # Bin
 app
 app.exe

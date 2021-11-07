@@ -8,7 +8,7 @@ import (
 
 func Pdfs(app *fiber.App) {
 	pdf := new(handler.Pdf)
-	group := app.Group("/api/v1/pdfs", middleware.ValidHostname)
+	group := app.Group("/api/v1/pdfs")
 	group.Static("", "./static/pdfs")
 	group.Post("", middleware.Files, pdf.Upload)
 }
