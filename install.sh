@@ -1,8 +1,15 @@
 echo "#####################Acualizando repositorios#####################"
 sudo apt update -y
 
-echo "#####################Instalación de curl and nginx#####################"
-sudo apt install curl nginx -y
+echo "#####################Instalación de curl, nginx and certbot#####################"
+sudo apt install curl nginx certbot python3-certbot-nginx -y
+
+echo "#####################Habilitando UFW#####################"
+sudo ufw enable
+
+echo "#####################Adicionando el tráfico de HTTPS#####################"
+sudo ufw allow 'Nginx Full'
+sudo ufw delete allow 'Nginx HTTP'
 
 echo "#####################Paquetes de requisitos previos#####################"
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y

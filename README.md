@@ -36,3 +36,5 @@ PORT=<port>
             } 
         ```
         
+### Configuration server nginx
+[click](nginx.md)
