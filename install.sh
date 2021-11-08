@@ -31,9 +31,6 @@ sudo apt install docker-ce -y
 echo "#####################Estableciando que el sistema siempre inicie con los servicios de docker en 'on'#####################"
 sudo systemctl enable docker
 
-echo "#####################Estado del servicio de docker docker#####################"
-sudo systemctl status docker
-
 echo "#####################Instalación de Docker Compose#####################"
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
