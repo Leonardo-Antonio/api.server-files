@@ -33,6 +33,6 @@ sudo service nginx status
 ```
 
 ```shell
-sudo certbot --nginx -d example.com -d www.example.com
+sudo certbot --nginx -d api-server-files.duckdns.org -d www.api-server-files.duckdns.org
 ```
 
