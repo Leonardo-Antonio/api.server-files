@@ -2,7 +2,7 @@ version: "3"
 
 services:
   server-files:
-    image: leo2001/api.server-files:1.1
+    image: leo2001/api.server-files:v4
     restart: always
     environment:
       KEY: ${KEY}
