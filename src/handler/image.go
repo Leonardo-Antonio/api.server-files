@@ -26,6 +26,6 @@ func (i *Image) Upload(c *fiber.Ctx) error {
 	}
 
 	return c.Status(http.StatusCreated).JSON(response.Successful("se guardo correctamente", map[string]string{
-		"url": c.BaseURL() + string(c.Request().URI().Path()) + "/" + fileName,
+		"url": "https://" + c.Hostname() + string(c.Request().URI().Path()) + "/" + fileName,
 	}))
 }

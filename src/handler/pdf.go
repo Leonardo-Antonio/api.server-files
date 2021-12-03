@@ -28,6 +28,6 @@ func (i *Pdf) Upload(c *fiber.Ctx) error {
 	}
 
 	return c.Status(http.StatusCreated).JSON(response.Successful("se guardo correctamente", map[string]string{
-		"url": c.Protocol() + "://" + c.Hostname() + string(c.Request().URI().Path()) + "/" + fileName,
+		"url": "https://" + c.Hostname() + string(c.Request().URI().Path()) + "/" + fileName,
 	}))
 }
